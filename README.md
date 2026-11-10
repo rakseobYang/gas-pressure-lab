@@ -1,6 +1,24 @@
 # PRESSURE QUEST · 주사기 속 우주
 
+**[수업 웹사이트 바로 열기 →](https://rakseobyang.github.io/gas-pressure-lab/)**
+
+[![GitHub Pages 배포](https://github.com/rakseobYang/gas-pressure-lab/actions/workflows/pages.yml/badge.svg)](https://github.com/rakseobYang/gas-pressure-lab/actions/workflows/pages.yml)
+
 중학교 과학 [9과06-02]에 맞춘 45분 탐구 수업. 4인 모둠이 **Vernier Go Direct 기체 압력 센서**와 20 mL 주사기를 직접 조작하고, Graphical Analysis에서 읽은 압력을 웹 활동지에 입력합니다.
+
+## 배포된 사이트와 자료
+
+GitHub Pages로 공개 배포되어 있습니다. 설치나 로그인 없이 아래 링크에서 수업을 시작할 수 있습니다.
+
+| 자료 | 바로가기 | 내용 |
+|---|---|---|
+| 수업 웹사이트 | [PRESSURE QUEST 열기](https://rakseobyang.github.io/gas-pressure-lab/) | 실험 안내, 측정표·그래프, 입자 모형, 탐구 기록 |
+| 빈 학생 활동지 | [PDF 다운로드](https://rakseobyang.github.io/gas-pressure-lab/downloads/pressure-quest-blank.pdf) | A4 4쪽, 인쇄하여 작성 |
+| 교사용 지도자료 | [PDF 다운로드](https://rakseobyang.github.io/gas-pressure-lab/downloads/pressure-quest-teacher.pdf) | A4 3쪽, 준비·운영·평가·출처 |
+| 작성한 활동지 | [웹사이트의 정리 단계](https://rakseobyang.github.io/gas-pressure-lab/#finish) | 입력한 측정값·그래프·답안을 **작성한 활동지 PDF** 버튼으로 저장 |
+| 배포 상태 | [GitHub Actions 확인](https://github.com/rakseobYang/gas-pressure-lab/actions/workflows/pages.yml) | 최신 배포 실행 결과와 로그 |
+
+학생에게 공유할 주소: **https://rakseobyang.github.io/gas-pressure-lab/**
 
 ## 수업 구성
 
@@ -26,7 +44,18 @@ npm run build:pdf
 
 `downloads/pressure-quest-blank.pdf`는 4쪽 빈 학생 활동지, `downloads/pressure-quest-teacher.pdf`는 3쪽 교사용 지도자료입니다. 작성한 활동지는 웹의 버튼에서 현재 기록을 반영해 생성됩니다. 긴 답변은 자동으로 다음 페이지로 이어집니다.
 
-GitHub Pages 설정에서 Source를 **GitHub Actions**로 선택하면 `.github/workflows/pages.yml`이 `main` 변경을 배포합니다. 런타임 외부 CDN·백엔드·API 키가 필요 없습니다.
+## 배포 방법과 수정 반영
+
+현재 저장소는 **GitHub Pages + GitHub Actions**로 배포합니다. 런타임 외부 CDN·백엔드·API 키가 필요 없습니다.
+
+1. 저장소의 **Settings → Pages → Build and deployment**에서 Source를 **GitHub Actions**로 설정합니다. 이 저장소에는 이미 설정되어 있습니다.
+2. 수업 웹 파일을 수정하고 `main` 브랜치에 커밋하면 [Deploy Pages 워크플로](.github/workflows/pages.yml)가 자동 실행됩니다.
+3. 워크플로가 HTML·CSS·JavaScript와 `assets/`, `downloads/`, `vendor/`를 묶어 배포합니다.
+4. [Actions](https://github.com/rakseobYang/gas-pressure-lab/actions/workflows/pages.yml)에서 실행 결과가 성공인지 확인한 뒤 [공개 사이트](https://rakseobyang.github.io/gas-pressure-lab/)에서 변경 내용을 확인합니다.
+
+수동 재배포는 **Actions → Deploy Pages → Run workflow**에서 실행할 수 있습니다. PDF 생성 코드를 수정했다면 `npm run build:pdf`를 실행하고 생성된 `downloads/`의 PDF도 함께 커밋하세요.
+
+배포 파일의 실제 다운로드와 로컬 검증본의 일치는 확인했습니다. 기능 테스트·PDF 검증과 실제 브라우저 시각 검증의 범위는 [검증 기록](VALIDATION.md)에 구분해 두었습니다.
 
 ## 실험 주의
 
