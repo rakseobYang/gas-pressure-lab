@@ -1,0 +1,12 @@
+{
+  "name": "pressure-quest",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/core.test.cjs",
+    "build:pdf": "node scripts/build-pdfs.cjs"
+  },
+  "dependencies": {
+    "jspdf": "^4.2.1"
+  }
+}

@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict'),C=require('../core.js');
+test('empty and invalid pressures are excluded without inventing values',()=>{for(const v of ['',null,undefined])assert.equal(C.pressure(v).state,'empty');for(const v of ['abc','0','-2','Infinity','401'])assert.equal(C.pressure(v).state,'invalid');assert.deepEqual(C.points({p10:'oops',p12:'82.5',p14:'-1'}),[[12,82.5]]);});
+test('valid sensor-range values retain precision',()=>{for(const v of ['0.1','101.325','400'])assert.equal(C.pressure(v).value,Number(v));});
+test('graph does not force an inverse relationship',()=>{const data={p10:'50',p12:'100',p14:'80'};assert.deepEqual(C.points(data),[[10,50],[12,100],[14,80]]);assert(C.svg(data).includes('100 kPa'));assert.equal((C.svg(data).match(/<circle/g)||[]).length,3);});
+test('corrupt saved records and markup remain inert',()=>{assert.deepEqual(C.clean(null),{});assert.equal(C.clean({team:5,safety:'true'}).team,'');assert.equal(C.clean({safety:'true'}).safety,false);assert(!C.svg({p10:'<script>alert(1)</script>'}).includes('<script>'));});
