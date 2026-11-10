@@ -12,9 +12,11 @@
 - 한글 글꼴을 포함한 PDF 생성: 빈 학생 활동지 4쪽, 교사용 자료 3쪽, 작성 예시 4쪽, 긴 답변 검증 6쪽.
 - PDF 전체 페이지를 이미지로 렌더링해 배치·한글·그래프·페이지 경계 확인. 한글 텍스트 추출도 확인.
 - 모든 로컬 자산 링크 존재 확인 및 JavaScript 문법 검사.
+- GitHub Actions 최초 배포 성공: https://github.com/rakseobYang/gas-pressure-lab/actions/runs/42763064384
+- 공개 URL https://rakseobyang.github.io/gas-pressure-lab/ 에서 HTML·CSS·JS·글꼴·PDF 등 11개 파일을 내려받아 로컬 검증본과 바이트 단위 일치 확인.
 
 ## 검증 한계
 
 - DOM 테스트는 실제 브라우저 화면 검증을 대체하지 않음. Windows 브라우저 자동화가 현재 URL을 확인하지 못해 시각 검증이 중단된 이력이 있음.
 - 실제 센서 연결·조작은 수행하지 않음. 교사가 보유 장비로 예비 실험해야 함.
-- GitHub Pages 배포 상태와 공개 URL 검증은 배포 완료 후 갱신함.
+- 실제 브라우저 화면 확인은 사용자 확인을 요청한 상태. 그 외 기능·PDF·배포 검증 결과와 구분한다.
